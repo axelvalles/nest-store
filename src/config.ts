@@ -4,6 +4,7 @@ export default registerAs('config', () => ({
   port: parseInt(process.env.PORT, 10) || 3000,
   apiKey: process.env.API_KEY,
   jwtSecret: process.env.JWT_SECRET,
+  databaseUrl: process.env.DATABASE_URL,
   postgres: {
     host: process.env.POSTGRES_HOST,
     port: parseInt(process.env.POSTGRES_PORT, 10) || 5432,

@@ -22,6 +22,6 @@ export class AppController {
 
   @Get('tasks')
   findTasks() {
-    return this.appService.findTasks()
+    return []
   }
 }
