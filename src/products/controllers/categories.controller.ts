@@ -7,16 +7,21 @@ import {
   Put,
   Delete,
   ParseIntPipe,
+  UseGuards,
 } from '@nestjs/common';
+import { IsPublic } from 'src/auth/decorators/public.decorator';
+import { ApiKeyGuard } from 'src/auth/guards/api-key.guard';
 
 import { CategoriesService } from '../services/categories.service';
 import { CreateCategoryDto, UpdateCategoryDto } from './../dtos/category.dtos';
 
+@UseGuards(ApiKeyGuard)
 @Controller('categories')
 export class CategoriesController {
   constructor(private categoriesService: CategoriesService) {}
 
   @Get()
+  @IsPublic()
   findAll() {
     return this.categoriesService.findAll();
   }

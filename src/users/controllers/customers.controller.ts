@@ -13,7 +13,7 @@ import { CustomersService } from '../services/customers.service';
 import { CreateCustomerDto, UpdateCustomerDto } from '../dtos/customer.dto';
 
 @Controller('customers')
-export class CustomerController {
+export class CustomersController {
   constructor(private customersService: CustomersService) {}
 
   @Get()
